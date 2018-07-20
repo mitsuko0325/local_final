@@ -10,16 +10,29 @@
     <div class="container">
       <h1>Todo List</h1>
       {{#each todos}}
-      <div class="jumbotron">
-        <h2>{{text}}</h2>
         {{#if completed}}
-          <p>&#10004;</p>
+          <div class="jumbotron jumbotron-extended">
+            <h2>{{text}}</h2>
+            {{#if completed}}
+              <p>&#10004;</p>
+            {{else}}
+              <p>&#x2613;</p>
+            {{/if}}
+            <a href="/todo/{{_id}}"><button type="button" class="btn btn-primary">Update</button></a>
+            <a href="/todo/{{_id}}/delete"><button type="button" class="btn btn-danger">Delete</button></a>
+          </div>
         {{else}}
-          <p>&#x2613;</p>
+        <div class="jumbotron">
+          <h2>{{text}}</h2>
+          {{#if completed}}
+            <p>&#10004;</p>
+          {{else}}
+            <p>&#x2613;</p>
+          {{/if}}
+          <a href="/todo/{{_id}}"><button type="button" class="btn btn-primary">Update</button></a>
+          <a href="/todo/{{_id}}/delete"><button type="button" class="btn btn-danger">Delete</button></a>
+        </div>
         {{/if}}
-        <a href="/todos/{{_id}}"><button type="button" class="btn btn-primary">Update</button></a>
-        <a href="/todos/{{_id}}/delete"><button type="button" class="btn btn-danger">Delete</button></a>
-      </div>
       {{/each}}
     </div>
   </body>

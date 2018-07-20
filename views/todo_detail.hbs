@@ -11,8 +11,8 @@
     <div class="container">
       <div class="jumbotron">
         <h1>Update todo</h1>
-        <form class="" action="/todos/{{_id}}/update" method="post">
-          <input type="text" name="text" size="40" value='{{text}}'>
+        <form class="" action="/todo/{{_id}}/update"  method="post">
+          <input type="text" name="text" size="40" value='{{text}}' required="required">
           {{# if completed}}
           <input type="radio" name="state" value="true" checked>completed
           <input type="radio" name="state" value="false">not yet
@@ -20,7 +20,7 @@
           <input type="radio" name="state" value="true">completed
           <input type="radio" name="state" value="false" checked>not yet
           {{/if}}
-          <input type="submit" name="" value="Update">
+          <input type="submit" name="" value="Update" onclick="check()">
         </form>
       </div>
     </div>

@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
+
 router.get('/',(req,res) => {
-  res.render('../views/home.hbs');
-  console.log('/');
-})
+  res.render('../views/create.hbs');
+});
+
 
 module.exports = router;
