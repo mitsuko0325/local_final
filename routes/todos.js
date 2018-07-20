@@ -4,7 +4,7 @@ var {Todo} = require('../server/models/todo');
 
 
 router.get('/',(req,res) => {
-  Todo.find().then((todos) => {
+  Todo.find().sort({_id:-1}).then((todos) => {
     res.render('../views/todos.hbs',{
       todos:todos
     });
