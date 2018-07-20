@@ -9,8 +9,8 @@
     {{> navbar}}
 
     <div class="container">
+      <h1>Update todo</h1>
       <div class="jumbotron">
-        <h1>Update todo</h1>
         <form class="" action="/todo/{{_id}}/update"  method="post">
           <input type="text" name="text" size="40" value='{{text}}' required="required">
           {{# if completed}}
